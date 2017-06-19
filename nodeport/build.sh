@@ -11,7 +11,7 @@ oc new-app netcat-echo
 # Build with plain docker 
 
 docker build . -t sjbylo/netcat-echo
-docker run -d --rm -p 2000:2000 --name echo sjbylo/netcat-echo 
+docker run -d -p 2000:2000 --name echo sjbylo/netcat-echo 
 docker kill echo 
 
 # Push to docker hub
