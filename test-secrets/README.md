@@ -10,7 +10,7 @@ echo password1 > secrets/pw1
 echo password2 > secrets/pw2
 ```
 
-*Note: Something to be aware of with secrets is that if the user gets access
+Note: Something to be aware of with secrets is that if the user gets access
 to the pod (e.g., by using the oc rsh command), the user will be
 able to see the contents of the secrets either in the environment
 variables or in the volume mounts. While the secrets mechanism
@@ -20,7 +20,7 @@ node, it is the user’s responsibility to ensure the secrecy of the contents.
 It is recommended that the contents of the secret be encrypted or
 obfuscated before creation. Secrets are stored internally in the etcd
 datastore as Base64-encoded strings which may not be secure
-enough in certain environments.*
+enough in certain environments.
 
 Now create the secret in OCP.  The secret data will be stored in etcd, base64-encoded. 
 
