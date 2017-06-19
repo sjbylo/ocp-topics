@@ -43,7 +43,7 @@ spec:
 
 Create the nodeport service.
 
-**Note: If you are trying this out in a group on the same OpenShift cluster, change the port from 30000 to another port somewhere between 30000 and 31000.  Remeber these ports cannot overlap, clusterwide. **
+**Note: If you are trying this out in a group on the same OpenShift cluster, change the port from 30000 to another port somewhere between 30000 and 31000.  Remeber these ports cannot overlap, clusterwide.**
 
 ```
 oc create -f nodeport.yaml
