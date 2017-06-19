@@ -34,7 +34,6 @@ Now, if not already, launch a pod and deployment configutation using a test app.
 
 ```
 oc new-app https://github.com/openshift/nodejs-ex
-
 ```
 
 Set the secret as an environment variable inside the pod.  We set this on the DC, which will make the DC re-launch the pod. 
