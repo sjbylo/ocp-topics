@@ -12,7 +12,9 @@ echo To succeed in life, you need three things: > src/file1
 echo a wishbone, a backbone and a funny bone. > src/file2
 ```
 
-To build your very simple application, use the following commands:
+To build your very simple application, use one of the following commands:
+
+# Create a build configuration and then launch the image 
 
 Create a new build configuration which knows it should use the s2i builder image.
 
@@ -39,4 +41,11 @@ Show the "simple application" is working by displaying its output.
 ```
 oc logs <pod>
 ```
+
+# Build and launch a new application with one command, using "oc new-app".
+
+```
+oc new-app s2i-simple-builder~https://github.com/sjbylo/ocp-topics --context-dir s2i-simple-builder/myapp --name myapp2
+```
+
 
