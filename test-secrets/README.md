@@ -13,8 +13,7 @@ to the pod (e.g., by using the oc rsh command), the user will be
 able to see the contents of the secrets either in the environment
 variables or in the volume mounts. While the secrets mechanism
 ensures that the data in the secret is never stored at rest on the
-node, it is the user’s responsibility to ensure the secrecy of the con‐
-tents.
+node, it is the user’s responsibility to ensure the secrecy of the contents.
 
 It is recommended that the contents of the secret be encrypted or
 obfuscated before creation. Secrets are stored internally in the etcd
