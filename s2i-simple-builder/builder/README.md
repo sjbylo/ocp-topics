@@ -31,8 +31,12 @@ oc logs bc/s2i-simple-builder -f                     # Check the build output fo
 
 If all went well, the new s2i buider image (s2i-simple-builder) has been created and pushed successfully into the registry.
 
-The builder image can be used to create a runtime image.  Go to the myapp directory and continue there.
+Show the newly created image stream which references and tracks the s2i simple builder image in the registry.
 
+```
+oc get is
+oc describe is <is>
+```
 
-
+The builder image can be used to create a runtime image.  Go to the associated myapp directory and continue there.
 
