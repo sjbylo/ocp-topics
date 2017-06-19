@@ -1,24 +1,27 @@
 # Trying out NodePort 
 
-This topic covers launching a simple container which listens on port 2000 and echos whatever is typed.
+This topic covers launching a simple container which listens on tcp port 2000 and echos whatever is typed. A nodeport service is created to allow access to the container from outside the OpenShift cluster. 
 
-Launch the netcat-echo container.
+Note: For this to work access it needed to the cluster such that incomming connections are allowed through on ports between 30000 and 31000.
+
+Launch the netcat-echo container from Docker Hub.
 
 ```
 oc new-app sjbylo/netcat-echo 
 ```
 
-This will create a normal service object which provides a static IP/hostname for the set of netcat-echo pods and also load balances over the set. 
+This will also create a normal service object which provides a static IP/hostname for the set of netcat-echo pods and also load balances over the set. 
 
-Have a look at the service which it tracking the netcat-echo pod(s).
+Have a look at the service which is tracking the netcat-echo pod(s).
 
 ```
 oc get svc
+oc get endpoints
 ```
 
-This service is only accessible over the SDN and cannot be reached from outside the cluster. 
+This service/pod is only accessible over the internal SDN and cannot be reached from outside the cluster. 
 
-Now expose the pods using a service of type *nodeport*.  This makes OpenShift listen on port 30000 on all nodes.  After the pods have been exposed, try to telnet to the pods. 
+Now expose the pods using a service of type *nodeport*.  This makes OpenShift listen on port 30000 on all nodes and proxies the connections to one of the netcat-echo pods.  After the pods have been exposed, try to telnet to the pods. 
 
 ```
 apiVersion: v1
@@ -46,7 +49,7 @@ Create the nodeport service.
 oc create -f nodeport.yaml
 ```
 
-If you have access, notice the openshift process is now listening on port 30000. Note, that if there are more than one nodeport services in the cluster, they cannot use the same port since all nodes in the cluster must listen on each particular port.   They cannot overlap. 
+If you have access to one of the cluster nodes, notice the openshift process is now listening on port 30000. Note, that if there are more than one nodeport services in the cluster, they cannot use the same port since all nodes in the cluster must listen on each particular port.   They cannot overlap. 
 
 ```
 # netstat -ltnp | grep 30000
