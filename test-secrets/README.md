@@ -50,5 +50,5 @@ Remote shell into the container and see the environment variable with the secret
 oc get po
 rsh nodejs-ex-2-vcx59
 $ env | grep pw
-``
+```
 
