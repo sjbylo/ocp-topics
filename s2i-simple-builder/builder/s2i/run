@@ -6,4 +6,4 @@ echo "Running myapp..."
 cat /tmp/myapp/*
 
 echo Sleeping...
-exec sleep 9999999
+while true; do sleep 1; echo -n .;done
