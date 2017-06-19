@@ -68,9 +68,19 @@ oc create -f external-endpoint.yaml
 
 ## Test it
 
+Enter the telnet pod and try to connect to the external service via the static service hostname, "external-echo-service".  The hostname will resolve to the IP address configured in the endpoint. 
+
 ```
 oc rsh <telnet pod>
-$ telnet <ip-of-service> 2000
+$ telnet external-echo-service 2000
+Trying 172.30.192.141...
+Connected to external-echo-service.
+Escape character is '^]'.
+1 2 3 4
+1 2 3 4
+^]
+telnet> quit
+Connection closed.
 ```
 
 A connection should be made to the netcat-echo service on port 2000, which is running outside the cluster. 
