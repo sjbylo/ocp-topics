@@ -1,12 +1,12 @@
 # This is a simple example of how to create an s2i builder image
 
-This Dockerfile creates an s2i builder image.  The application runtime is represented by the "cat" command and will simply display the contents of any "source code" files provided during the s2i build.
+The Dockerfile creates an s2i builder image.  The application runtime is represented by the "cat" command and will simply display the contents of any "source code" files provided during the s2i build.
 
-Try the following
+Try the following:
 
-View the Dockerfile and understand how it creates a special docker image, an s2i builder image.
+Look at the Dockerfile to understand how it creates a special docker image, an s2i builder image, by adding s2i scripts and labelling the image. 
 
-Build the builder image. If you have docker available, you can build it like this:
+Build the s2i builder image. If you have docker available, you can build it like this:
 
 ```
 docker build -t s2i-simple-builder . 
@@ -14,12 +14,12 @@ docker build -t s2i-simple-builder .
 docker run s2i-simple-builder
 ```
 
-Notice that if you "docker run" an s2i builder image as-is, without providing any "source code", you will usually see a message describing how to use the image. 
+Notice that when you "docker run" an s2i builder image as-is, without providing any "source code", you will usually see a message describing how to use the image. 
 
-To build the image inside of openshift and have the image pushed into the internal registry, follow these commands.
+To build the image inside openshift and have it pushed into the internal registry, follow these commands:
 
 ```
-oc import-image openshift/base-centos7 --confirm  # Make this base image available. Do this only once 
+oc import-image openshift/base-centos7 --confirm  # Make the base image available. Do this only once.
 
 oc new-build . --name s2i-simple-builder          # Create the build configuration (using Docker build strategry) 
 
