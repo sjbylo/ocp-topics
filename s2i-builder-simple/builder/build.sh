@@ -1,8 +1,8 @@
 oc import-image openshift/base-centos7 --confirm
 
-oc new-build . --name s2i-builder-simple
+oc new-build . --name s2i-simple-builder
 
-oc start-build s2i-builder-simple --from-dir=.
+oc start-build s2i-simple-builder --from-dir=.
 
-oc logs bc/s2i-builder-simple -f
+oc logs bc/s2i-simple-builder -f
 
