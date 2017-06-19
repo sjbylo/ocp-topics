@@ -1,4 +1,4 @@
-oc new-build s2i-simple-builder~. --context-dir=s2i-builder-simple/myapp --name myapp
+oc new-build s2i-simple-builder~. --context-dir=s2i-simple-builder/myapp --name myapp
 
 oc logs bc/myapp -f
 
