@@ -47,5 +47,5 @@ oc logs <pod>
 ```
 oc new-app s2i-simple-builder~https://github.com/sjbylo/ocp-topics --context-dir s2i-simple-builder/myapp --name myapp2
 ```
-
+(Note that this command will clone the git repository and does not upload the 'current directory' to the s2i builder container, as in the above 1st method.)
 
