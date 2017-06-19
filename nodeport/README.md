@@ -1,7 +1,6 @@
 # Trying out NodePort 
 
-
-TRY THIS ON AWS INSTANCE
+This topic covers launching a simple container with listens on port 2000 and echos whattever it typed.
 
 ```
 apiVersion: v1
@@ -16,7 +15,7 @@ spec:
     targetPort: 8080
     nodePort: 30000
   selector:
-    deploymentconfig: nodejs-ex
+    deploymentconfig: netcat-echo 
   sessionAffinity: None
   type: "NodePort"
 ```

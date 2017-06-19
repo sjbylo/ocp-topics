@@ -2,15 +2,14 @@ apiVersion: v1
 kind: Service
 metadata:
   labels:
-    app: myapp
-  name: myapp-external
+    app: netcat-echo
+  name: netcat-echo-external
 spec:
   ports:
-  - port: 8080
-    targetPort: 8080
+  - port: 2000
+    targetPort: 2000
     nodePort: 30000
   selector:
-    name: frontend
+    deploymentconfig: netcat-echo 
   sessionAffinity: None
   type: "NodePort"
-
