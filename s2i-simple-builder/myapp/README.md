@@ -1,10 +1,14 @@
-# This is the "source code" for a very simple runtime using the "cat" command. 
+# "Source code" for a very simple runtime using the "cat" command. 
 
-The s2i process
+This directory is used in conjuntion with the s2i-simple-builder example. 
+
+##The s2i process
 
 ![Diagram of s2i process](s2i-process.png)
 
 The simple runtime will output the contents of any files inside your "src/" directory. 
+
+## Try this out
 
 To try this out, create a directory "src" and place text files inside:
 
@@ -18,7 +22,7 @@ echo a wishbone, a backbone and a funny bone. > src/file2
 
 To build your very simple application, use one of the following commands:
 
-## 1st way: Build using a build configuration and then launch the resulting image 
+## 1st way: Build using a binary build configuration and then launch the resulting image 
 
 Create a new build configuration which knows it should use the s2i builder image.
 
