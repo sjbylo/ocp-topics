@@ -3,6 +3,8 @@
 echo "\
 This is a simple s2i builder image example which runs the very simple 'cat runtime'.
 
+oc new-app s2i-simple-builder~https://github.com/sjbylo/ocp-topics/tree/master/s2i-simple-builder/myapp --name myapp
+
 
 "
 
