@@ -1,0 +1,13 @@
+kind: Service
+apiVersion: "v1"
+metadata:
+  name: "external-echo-service"
+spec:
+  ports:
+    -
+      name: "echo"
+      protocol: "TCP"
+      port: 2000
+      targetPort: 2000
+      nodePort: 0
+selector: {}
