@@ -60,7 +60,7 @@ From outside the cluster, try to connect to port 30000
 ```
 telnet hostname-of-master-api-openshift 30000
 Trying 52.221.38.230...
-Connected to master.ocp.paas.bylo.de.
+Connected to hostname-of-master-api-openshift
 Escape character is '^]'.
 1 2 3 4
 1 2 3 4
@@ -83,5 +83,5 @@ telnet: connect to address 52.221.38.230: Connection refused
 telnet: Unable to connect to remote host
 ```
 
-Telnet fails this time because there is no nodeport service. 
+Telnet fails this time because the pod(s) are no longer exposed by the nodeport service. 
 
