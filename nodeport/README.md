@@ -83,4 +83,5 @@ telnet: connect to address 52.221.38.230: Connection refused
 telnet: Unable to connect to remote host
 ```
 
+Telnet fails this time because there is no nodeport service. 
 
