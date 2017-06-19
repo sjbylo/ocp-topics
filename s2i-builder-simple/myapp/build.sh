@@ -1,4 +1,4 @@
-oc new-build --binary=true -i s2i-simple-builder --name myapp
+oc new-build --binary=true -i s2i-simple-builder --name myapp --context-dir=myapp
 
 oc start-build myapp --from-dir=. 
 

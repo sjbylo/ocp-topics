@@ -1,4 +1,8 @@
 #!/bin/sh
 
-echo "This is simple S2I base image example which will cat any source files."
+echo "\
+This is a simple s2i builder image example which runs the very simple 'cat runtime'.
+
+
+"
 
