@@ -2,7 +2,7 @@
 
 This directory is used in conjuntion with the s2i-simple-builder example. 
 
-##The s2i process
+## The s2i process
 
 ![Diagram of s2i process](s2i-process.png)
 
