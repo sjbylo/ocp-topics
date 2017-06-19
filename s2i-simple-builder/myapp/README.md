@@ -1,5 +1,9 @@
 # This is the "source code" for a very simple runtime using the "cat" command. 
 
+The s2i process
+
+![Diagram of s2i process](s2i-process.png)
+
 The simple runtime will output the contents of any files inside your "src/" directory. 
 
 To try this out, create a directory "src" and place text files inside:
