@@ -17,10 +17,10 @@ To build your very simple application, use the following commands:
 Create a new build configuration which knows it should use the s2i builder image.
 
 ```
-oc new-build --binary=true -i s2i-builder-simple --name myapp 
+oc new-build --binary=true -i s2i-simple-builder --name myapp 
 ```
 
-Start the s2i build by uploading the current directory into the s2i builder container. 
+Start the s2i build process which will run the s2i builder image, upload the current directory into it and execute the assemble script. 
 
 ```
 oc start-build myapp --from-dir=.       
