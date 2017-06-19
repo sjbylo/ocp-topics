@@ -19,13 +19,13 @@ Notice that when you "docker run" an s2i builder image as-is, without providing 
 To build the image inside openshift and have it pushed into the internal registry, follow these commands:
 
 ```
-oc import-image openshift/base-centos7 --confirm  # Make the base image available. Do this only once.
+oc import-image openshift/base-centos7 --confirm     # Make the base image available. Do this only once.
 
-oc new-build . --name s2i-simple-builder          # Create the build configuration (using Docker build strategry) 
+oc new-build --name s2i-simple-builder --binary=true # Create the build configuration (using Docker build strategry) 
 
-oc start-build s2i-simple-builder --from-dir=.    # Start the build, using the current diectory
+oc start-build s2i-simple-builder --from-dir=.       # Start the build, using the current diectory
 
-oc logs bc/s2i-simple-builder -f                  # Check the build output for errors 
+oc logs bc/s2i-simple-builder -f                     # Check the build output for errors 
 
 ```
 
