@@ -1,0 +1,10 @@
+#!/bin/sh
+
+set -e
+
+echo "---> Preparing source..."
+
+mkdir -p /tmp/myapp
+
+cp -Rf /tmp/src/src/. /tmp/myapp
+

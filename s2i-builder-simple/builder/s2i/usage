@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "This is simple S2I base image example which will cat any source files."
+
