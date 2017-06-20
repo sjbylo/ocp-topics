@@ -6,3 +6,4 @@ The *builder* directory holds what's needed to create a new builder image.
 
 The *myapp* directory holds the "source code" for the simple application. 
 
+[builder](./builder/)
