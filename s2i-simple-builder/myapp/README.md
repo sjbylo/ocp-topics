@@ -31,9 +31,9 @@ To build your very simple application, use one of the following ways.
 Build using a build configuration that points to this github repository and then launch the resulting image 
 
 ```
-oc new-build s2i-simple-builder~https://github.com/sjbylo/ocp-topics --context-dir=s2i-simple-builder/myapp --name myapp
+oc new-build s2i-simple-builder~https://github.com/sjbylo/ocp-topics --context-dir=s2i-simple-builder/myapp --name myapp1
 
-oc logs bc/myapp -f
+oc logs bc/myapp1 -f
 
 Cloning "https://github.com/sjbylo/ocp-topics" ...
 	Commit:	b0d508b9e3655a6a6f148464e57e3c1d3412dbf4 (mod)
@@ -43,23 +43,29 @@ Cloning "https://github.com/sjbylo/ocp-topics" ...
 + mkdir -p /tmp/myapp
 + cp -Rf /tmp/src/src/. /tmp/myapp
 ---> Preparing source...
-Pushing image 172.30.1.1:5000/myproject/myapp:latest ...
+Pushing image 172.30.1.1:5000/myproject/myapp1:latest ...
 Pushed 0/6 layers, 3% complete
 Pushed 1/6 layers, 17% complete
 Push successful
 ```
 
+Create an application from the newly created myapp1 image.
+
+```
+oc new-app myapp1
+oc get pod
+```
+
 Show the "simple application" is working by displaying its output. 
 
 ```
-oc logs <pod>
+oc logs <myapp1-pod>
 ```
 
-## 2st way
+
+## 2nd way
 
 Build using a binary build configuration and then launch the resulting image 
-
-Create a new build configuration which knows it should use the s2i builder image.
 
 ```
 oc new-build s2i-simple-builder --name myapp2 --binary=true
