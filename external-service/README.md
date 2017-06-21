@@ -11,7 +11,7 @@ docker run -d -p 2000:2000 --name echo sjbylo/netcat-echo
 
 ## Check the service is working
 
-Note: Replace <ip> with your IP address.
+Note: Replace < ip > with your IP address.
 
 ```
 ( echo 1 2 3; sleep 1 ) | telnet <ip> 2000
