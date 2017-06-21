@@ -4,7 +4,9 @@ set -ex
 
 echo "---> Preparing source..."
 
+# Create a directory for the source code
 mkdir -p /tmp/myapp
 
+# Copy the 'source code' to where the 'cat' runtime will expect it to be
 cp -Rf /tmp/src/src/. /tmp/myapp
 
