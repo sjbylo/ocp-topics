@@ -23,7 +23,7 @@ Connection closed by foreign host.
 ```
 *Note if '1 2 3' is not shown then the service is not working.*
 
-## Start a simple pod containing telnet from which connectivity will be tested.
+## Start a simple pod in OpenShift containing telnet from which connectivity will be tested.
 
 ```
 oc new-app sjbylo/telnet
