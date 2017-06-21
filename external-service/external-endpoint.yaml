@@ -6,7 +6,7 @@ subsets:
   -
     addresses:
       -
-        ip: "192.168.10.213" 
+        ip: "192.168.1.15" 
     ports:
       -
         port: 2000 

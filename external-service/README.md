@@ -2,12 +2,26 @@
 
 This topic covers the use of a service to allow pods to connect to external services.
 
-## Start a test external service, e.g. on the master or on a node.  
+## Start a test external service, e.g. on the master/node or on your laptop (if using the OpenShift CDK) 
 
 ```
 docker run -d -p 2000:2000 --name echo sjbylo/netcat-echo
 ```
-Note down the ip address of the node where this service is listening on (cannot use localhost).
+*Note down the ip address where this service is listening on (cannot use localhost).*
+
+## Check the service is working
+
+Note: Replace <ip> with your IP address.
+
+```
+( echo 1 2 3; sleep 1 ) | telnet <ip> 2000
+Trying 192.168.1.15...
+Connected to 192.168.1.15.
+Escape character is '^]'.
+1 2 3
+Connection closed by foreign host.
+```
+*Note if '1 2 3' is not shown then the service is not working.*
 
 ## Start a simple pod containing telnet from which connectivity will be tested.
 
@@ -32,7 +46,7 @@ spec:
       nodePort: 0
 selector: {}
 ```
-Note that the difference beetween a normal service obeject and this one is that the selector is blank. This service will not need to track any pods.  One or more endpoints must be added for the service to work.
+Note that the difference beetween a normal service obeject and this one is that the selector is blank. This service will not need to track any pods.  One or more endpoints must be added manually for the service to work.
 
 ## Create the service object. 
 
@@ -86,3 +100,4 @@ Connection closed.
 A connection should be made to the netcat-echo service on port 2000, which is running outside the cluster. 
 
 See the [documentation](https://docs.openshift.com/container-platform/3.5/dev_guide/integrating_external_services.html#using-an-ip-address-and-endpoints).
+
