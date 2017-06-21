@@ -1,6 +1,6 @@
-# "Source code" for a very simple runtime using the "cat" command. 
+# "Source code" for a simple "langage" called the simple-cat-runtime.
 
-This directory is used in conjuntion with the s2i-simple-builder example. 
+This directory contains the 'source code' which can be built using the related [s2i-simple-builder](../builder).
 
 ## Diagram of the s2i process
 
