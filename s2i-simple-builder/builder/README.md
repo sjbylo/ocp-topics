@@ -38,5 +38,5 @@ oc get is
 oc describe is <is>
 ```
 
-The builder image can be used to create a runtime image.  Go to the associated [myapp](../../myapp) directory and continue there.
+The builder image can be used to create a runtime image.  Go to the associated [myapp](../myapp) directory and continue there.
 
