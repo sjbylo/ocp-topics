@@ -14,14 +14,21 @@ To try this out use this pre existing src/ directory which contains the 'source 
 
 ```
 find src
+```
+
+The output of this command should be:
+
+```
 src
 src/hellofile
 src/worldfile
 ```
 
-To build your very simple application, use one of the following commands:
+To build your very simple application, use one of the following ways.
 
-## 1st way: Build using a build configuration that points to this github repository and then launch the resulting image 
+## 1st way
+
+Build using a build configuration that points to this github repository and then launch the resulting image 
 
 ```
 oc new-build s2i-simple-builder~https://github.com/sjbylo/ocp-topics --context-dir=s2i-simple-builder/myapp --name myapp
@@ -48,12 +55,14 @@ Show the "simple application" is working by displaying its output.
 oc logs <pod>
 ```
 
-## 2st way: Build using a binary build configuration and then launch the resulting image 
+## 2st way
+
+Build using a binary build configuration and then launch the resulting image 
 
 Create a new build configuration which knows it should use the s2i builder image.
 
 ```
-oc new-build --binary=true -i s2i-simple-builder --name myapp2
+oc new-build s2i-simple-builder --name myapp2 --binary=true
 ```
 
 Start the s2i build process which will run the s2i builder image, upload the current directory (--from-dir=.) into it and execute the assemble script. 
@@ -76,7 +85,9 @@ Show the "simple application" is working by displaying its output.
 oc logs <pod>
 ```
 
-## 3rd way: Build and launch a new application with one command, using "oc new-app".
+## 3rd way
+
+Build and launch a new application with one command, using "oc new-app".
 
 ```
 oc new-app s2i-simple-builder~https://github.com/sjbylo/ocp-topics --context-dir s2i-simple-builder/myapp --name myapp3
