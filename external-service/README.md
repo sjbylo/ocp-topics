@@ -23,13 +23,13 @@ Connection closed by foreign host.
 ```
 *Note if '1 2 3' is not shown then the service is not working.*
 
-## Start a simple pod in OpenShift containing telnet from which connectivity will be tested.
+## Start a simple pod in OpenShift containing telnet from which connectivity will be tested
 
 ```
 oc new-app sjbylo/telnet
 ```
 
-## Create the service to represent the external service.
+## Create the service to represent the external service
 
 ```
 kind: "Service"
@@ -46,7 +46,7 @@ spec:
       nodePort: 0
 selector: {}
 ```
-Note that the difference beetween a normal service obeject and this one is that the selector is blank. This service will not need to track any pods.  One or more endpoints must be added manually for the service to work.
+Note that the difference beetween a normal service object and this one is that the selector is blank. This service will not need to track any pods.  One or more endpoints must be added manually for the service to work (see below).
 
 ## Create the service object. 
 
@@ -54,7 +54,7 @@ Note that the difference beetween a normal service obeject and this one is that 
 oc create -f external-service.yaml
 ```
 
-## Next, create the endpoint which points to the external IP and port.
+## Next, create the endpoint which points to the external IP and port
 
 Define the yaml file and set the correct IP address of the external service you noted earlier.  
 
@@ -97,7 +97,7 @@ telnet> quit
 Connection closed.
 ```
 
-A connection should be made to the netcat-echo service on port 2000, which is running outside the cluster. 
+A connection should be made to the *netcat-echo* service on port 2000, which is running outside the cluster. 
 
 See the [documentation](https://docs.openshift.com/container-platform/3.5/dev_guide/integrating_external_services.html#using-an-ip-address-and-endpoints).
 
