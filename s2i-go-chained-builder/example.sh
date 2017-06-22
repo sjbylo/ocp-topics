@@ -1,8 +1,8 @@
 oc new-project go-chained-example
 oc import-image jorgemoralespou/s2i-go --confirm
 
-oc new-build s2i-go~https://github.com/sjbylo/ose-chained-builds \
-   --context-dir=/go-chained-example/hello_world \
+oc new-build s2i-go~https://github.com/sjbylo/ocp-topics \
+   --context-dir=/s2i-go-chained-builder/hello_world \
    --name=builder
 
 sleep 1
@@ -18,11 +18,11 @@ oc new-build --name=runtime \
    --dockerfile=$'FROM openshift/base-centos7\nCOPY main /main\nEXPOSE 8080\nENTRYPOINT ["/main"]' \
    --strategy=docker
 
-sleep 1
+sleep 2
 
-oc logs -f bc/runtime --follow
+until oc logs -f bc/runtime --follow; do sleep 1; done
 
-sleep 1
+sleep 2
 
 # Deploy and expose the app once built
 oc new-app runtime --name=my-application

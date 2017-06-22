@@ -77,10 +77,13 @@ bash example.sh
 
 ## Demo
 
-Run the following in 2 different windows to view both of the builds in the chain
+Run the following in 2 different windows to view both of the build running one after another, in the chain.
 
 ```
 while true; do clear; oc logs bc/builder -f; sleep 2; done
+```
+
+```
 while true; do clear; oc logs bc/runtime -f; sleep 2; done
 ```
 
