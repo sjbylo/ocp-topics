@@ -18,7 +18,7 @@ To try this out use this pre existing src/ directory which contains the 'source 
 find src
 ```
 
-The output of this command should be:
+The output of this command should be the same as or similar to:
 
 ```
 src
