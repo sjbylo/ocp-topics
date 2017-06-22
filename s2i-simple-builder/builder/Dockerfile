@@ -5,8 +5,8 @@ FROM openshift/base-centos7
 
 # Set labels used in OpenShift to describe the builder images
 
-LABEL io.k8s.description="simple s2i builder example" \
-      io.k8s.display-name="simple s2i builder example" \
+LABEL io.k8s.description="Simple s2i builder example, used to build the simple 'cat-runtime'." \
+      io.k8s.display-name="Simple s2i builder example" \
       io.openshift.s2i.scripts-url="image:///usr/libexec/s2i" \
       io.openshift.tags="builder"
 
