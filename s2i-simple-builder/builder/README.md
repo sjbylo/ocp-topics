@@ -1,6 +1,13 @@
 # This is a simple example of how to create an s2i builder image
 
-The Dockerfile creates an s2i builder image.  The application runtime is represented by the "cat" command and will simply display the contents of any "source code" files provided during the s2i build.
+The Source to Image tool, which is integrated into OpenShift, is interesting for OpenShift users as it can shield users from the intricacies of creating Docker container images.  More can be read about Source to Image at the [project's page](https://github.com/openshift/source-to-image/blob/master/README.md).
+
+There are several reasons to use Source to Image but the two which are mentioned often are:
+
+1. A developer can get up and running with Docker without knowing anything about Docker itself.  This is great for Developers who are not interested in Docker and just want to get their code running.        
+1. An Enterprise wants to have more control over how their teams build container images and don't want to allow developers the freedom to install anything they choose into their container images.  The Source to Image process shields the user somewhat from the details of how Docker works. 
+
+The Dockerfile in this directory creates an s2i builder image.  The application runtime is represented by the "cat" command and will simply display the contents of any "source code" files provided during the s2i build.
 
 Try the following:
 
