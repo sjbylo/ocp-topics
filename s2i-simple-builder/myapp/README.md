@@ -24,6 +24,14 @@ src/hellofile
 src/worldfile
 ```
 
+As a developer, you might want to "test" your application.  To do this, simply run the "cat runtime" as follows:
+
+```
+cat src/*
+Hello
+World
+```
+
 To build your very simple application, use one of the following ways.
 
 ## 1st way
