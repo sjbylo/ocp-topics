@@ -10,9 +10,7 @@ The simple-cat-runtime will output the contents of any files inside a "src/" dir
 
 ## Try this out
 
-change directory intoNote: Make sure you change directory into the "myapp" directory or you have a sub-directory named "src" which holds some text files.
-
-To try this out use this pre existing src/ directory which contains the 'source code' files, hellofile and worldfile. 
+To try this out use this pre existing src/ directory which contains the 'source code' files, hellofile and worldfile.  Make sure you change directory into "myapp" or you have a sub-directory named "src" which holds some text files.
 
 ```
 find src
