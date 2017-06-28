@@ -1,8 +1,8 @@
 kind: "Service"
-  apiVersion: "v1"
-  metadata:
-    name: "external-google-service"
-  spec:
-    type: ExternalName
-    externalName: www.google.com
-  selector: {} 
+apiVersion: "v1"
+metadata:
+  name: "external-google-service"
+spec:
+  type: ExternalName
+  externalName: www.google.com
+selector: {} 
