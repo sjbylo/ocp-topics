@@ -122,7 +122,7 @@ oc create -f external-google.yaml
 
 ## Try it out
 
-Connect to port 80 on the google service. 
+Connect to port 80 on the google service and enter the HTTP request 'GET /'.  You should see an HTTP responce from the service. 
 
 ```
 oc rsh <telnet pod>
@@ -131,8 +131,12 @@ Trying 172.30.192.141...
 Connected to external-echo-service.
 Escape character is '^]'.
 GET /
+HTTP/1.0 302 Found
 ...
 ...
+...
+</BODY></HTML>
+Connection closed by foreign host.
 ^]
 telnet> quit
 Connection closed.
