@@ -145,4 +145,4 @@ A connection should be made to the google service on port 80, which is running o
 
 See the [documentation](https://docs.openshift.com/container-platform/3.5/dev_guide/integrating_external_services.html#using-an-ip-address-and-endpoints).
 
-See a [blog](https://blog.openshift.com/kubernetes-services-by-example/)
+See a [blog](https://blog.openshift.com/kubernetes-services-by-example/).
