@@ -74,7 +74,7 @@ subsets:
         name: "echo"
 ```
 
-### Create the endpoint. 
+### Create the endpoint
 
 ```
 oc create -f external-endpoint.yaml
@@ -99,5 +99,44 @@ Connection closed.
 
 A connection should be made to the *netcat-echo* service on port 2000, which is running outside the cluster. 
 
-See the [documentation](https://docs.openshift.com/container-platform/3.5/dev_guide/integrating_external_services.html#using-an-ip-address-and-endpoints).
+## Somthing else to try is using an FQDN
 
+The following service represents an external service, in this case Google using http over port 80.
+
+```
+kind: "Service"
+  apiVersion: "v1"
+  metadata:
+    name: "external-google-service"
+  spec:
+    type: ExternalName
+    externalName: www.google.com
+  selector: {} 
+```
+
+### Create the service 
+
+```
+oc create -f external-google.yaml
+```
+
+## Try it out
+
+Connect to port 80 on the google service. 
+
+```
+oc rsh <telnet pod>
+$ telnet external-google-service 80
+Trying 172.30.192.141...
+Connected to external-echo-service.
+Escape character is '^]'.
+GET /
+...
+...
+^]
+telnet> quit
+Connection closed.
+```
+A connection should be made to the google service on port 80, which is running outside the cluster. 
+
+See the [documentation](https://docs.openshift.com/container-platform/3.5/dev_guide/integrating_external_services.html#using-an-ip-address-and-endpoints).
