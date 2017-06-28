@@ -21,7 +21,7 @@ Escape character is '^]'.
 1 2 3
 Connection closed by foreign host.
 ```
-*Note if '1 2 3' is not shown then the service is not working.*
+*Note if '1 2 3' is not shown in the output then the netcat-echo service is not working.*
 
 ## Start a simple pod in OpenShift containing telnet from which connectivity will be tested
 
@@ -48,7 +48,7 @@ selector: {}
 ```
 Note that the difference beetween a normal service object and this one is that the selector is blank. This service will not need to track any pods.  One or more endpoints must be added manually for the service to work (see below).
 
-## Create the service object. 
+### Create the service object. 
 
 ```
 oc create -f external-service.yaml
@@ -74,7 +74,7 @@ subsets:
         name: "echo"
 ```
 
-## Create the endpoint. 
+### Create the endpoint. 
 
 ```
 oc create -f external-endpoint.yaml
