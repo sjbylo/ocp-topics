@@ -2,7 +2,7 @@
 
 This topic covers the use of a service to allow pods to connect to external services.
 
-## Start a test external service, e.g. on the master/node or on your laptop (if using the OpenShift CDK) 
+## Start an external service to test with, e.g. on a master/node or on your laptop (if using the OpenShift CDK) 
 
 ```
 docker run -d -p 2000:2000 --name echo sjbylo/netcat-echo
