@@ -1,6 +1,6 @@
 # Test connectivity to an external service
 
-This topic covers the use of a service to allow pods to connect to external services.
+This topic covers the use of a service to allow pods to connect to external services *using well-known names which will not change withing the OpenShift environment*. 
 
 ## Start an external service to test with, e.g. on a master/node or on your laptop (if using the OpenShift CDK) 
 
