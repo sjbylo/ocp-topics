@@ -23,3 +23,9 @@ Container 2 is listening on port 2000 and echos whattever it receives.
 
 Conteiner 1 sends the date to port 2000 on localhost and the date is echoed.
 
+Use the following command to view the log showing the date:
+
+```
+oc logs `oc get po | grep ^sidecars | awk '{print $1}'` -c container1 -f
+```
+
