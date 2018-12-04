@@ -47,7 +47,7 @@ oc set env dc/nodejs-ex --from=secret/my-secret
 Secrets can also be mounted into a container like this.  After the pod has been refreshed, the secret data can be found under /data.
 
 ```
-oc volume dc/nodejs-ex --add --name=v1 --type=secret --secret-name=my-secret --mount-path=/data
+oc set volume dc/nodejs-ex --add --name=v1 --type=secret --secret-name=my-secret --mount-path=/data
 ```
 
 Remote shell into the container and see the environment variable with the secret content.
